@@ -1,8 +1,8 @@
 <div class="footer">
     <div class="pull-right">
-        Example text
+        Edynos
     </div>
     <div>
-        <strong>Copyright</strong> Example Company &copy; 2014-2017
+        <strong>Copyright</strong> Edynos &copy; 2017
     </div>
 </div>

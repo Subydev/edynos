@@ -18,20 +18,11 @@
                     IN+
                 </div>
             </li>
-            <li class="<?php echo e(isActiveRoute('main')); ?>">
-                <a href="<?php echo e(url('/')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+            <li class="<?php echo e(isActiveRoute('home')); ?>">
+                <a href="<?php echo e(url('/home')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
             </li>
             <li class="<?php echo e(isActiveRoute('minor')); ?>">
-                <a href="<?php echo e(url('/minor')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Create</span> </a>
-            </li>
-            <li class="<?php echo e(isActiveRoute('minor')); ?>">
-                <a href="<?php echo e(url('/minor')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">My Charts</span> </a>
-            </li>
-            <li class="<?php echo e(isActiveRoute('minor')); ?>">
-                <a href="<?php echo e(url('/minor')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Forums</span> </a>
-            </li>
-            <li class="<?php echo e(isActiveRoute('minor')); ?>">
-                <a href="<?php echo e(url('/minor')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Activity</span> </a>
+                <a href="<?php echo e(url('/minor')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Minor view</span> </a>
             </li>
         </ul>
 

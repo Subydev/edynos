@@ -18,20 +18,11 @@
                     IN+
                 </div>
             </li>
-            <li class="{{ isActiveRoute('main') }}">
-                <a href="{{ url('/') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+            <li class="{{ isActiveRoute('home') }}">
+                <a href="{{ url('/home') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
             </li>
             <li class="{{ isActiveRoute('minor') }}">
-                <a href="{{ url('/minor') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Create</span> </a>
-            </li>
-            <li class="{{ isActiveRoute('minor') }}">
-                <a href="{{ url('/minor') }}"><i class="fa fa-th-large"></i> <span class="nav-label">My Charts</span> </a>
-            </li>
-            <li class="{{ isActiveRoute('minor') }}">
-                <a href="{{ url('/minor') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Forums</span> </a>
-            </li>
-            <li class="{{ isActiveRoute('minor') }}">
-                <a href="{{ url('/minor') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Activity</span> </a>
+                <a href="{{ url('/minor') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Minor view</span> </a>
             </li>
         </ul>
 
