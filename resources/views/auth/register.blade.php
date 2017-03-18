@@ -38,7 +38,7 @@
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                    <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
+                    <input id="username" placeholder="Username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
 
                     @if ($errors->has('username'))
                         <span class="help-block">
@@ -47,6 +47,7 @@
                     @endif
                 </div>
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                  <input id="email" placeholder="Email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                     @if ($errors->has('email'))
                         <span class="help-block">
@@ -56,7 +57,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                      <input id="password" type="password" class="form-control" name="password" required>
+                      <input id="password" placeholder="Password" type="password" class="form-control" name="password" required>
                     @if ($errors->has('password'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
@@ -65,7 +66,7 @@
                 </div>
 
                 <div class="form-group">
-                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                  <input id="password-confirm" placeholder="Confirm Password" type="password" class="form-control" name="password_confirmation" required>
                 </div>
                     <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
                     <p class="text-muted text-center"><small>Already have an account?</small></p>

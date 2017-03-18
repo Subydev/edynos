@@ -39,7 +39,7 @@
 
 
                 <div class="form-group<?php echo e($errors->has('username') ? ' has-error' : ''); ?>">
-                    <input id="username" type="text" class="form-control" name="username" value="<?php echo e(old('username')); ?>" required autofocus>
+                    <input id="username" placeholder="Username" type="text" class="form-control" name="username" value="<?php echo e(old('username')); ?>" required autofocus>
 
                     <?php if($errors->has('username')): ?>
                         <span class="help-block">
@@ -48,6 +48,7 @@
                     <?php endif; ?>
                 </div>
                 <div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
+                  <input id="email" placeholder="Email" type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>" required>
 
                     <?php if($errors->has('email')): ?>
                         <span class="help-block">
@@ -57,7 +58,7 @@
                 </div>
 
                 <div class="form-group<?php echo e($errors->has('password') ? ' has-error' : ''); ?>">
-                      <input id="password" type="password" class="form-control" name="password" required>
+                      <input id="password" placeholder="Password" type="password" class="form-control" name="password" required>
                     <?php if($errors->has('password')): ?>
                         <span class="help-block">
                             <strong><?php echo e($errors->first('password')); ?></strong>
@@ -66,7 +67,7 @@
                 </div>
 
                 <div class="form-group">
-                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                  <input id="password-confirm" placeholder="Confirm Password" type="password" class="form-control" name="password_confirmation" required>
                 </div>
                     <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
                     <p class="text-muted text-center"><small>Already have an account?</small></p>

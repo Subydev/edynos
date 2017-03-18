@@ -8,7 +8,7 @@
             <div class="col-lg-12">
                 <div class="text-center m-t-lg">
                     <h1>
-                        Simple example of second view
+                        Edyons Chart create area
                     </h1>
                     <small>Writen in minor.blade.php file.</small>
                 </div>
