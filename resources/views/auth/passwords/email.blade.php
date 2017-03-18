@@ -1,7 +1,31 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Main Content -->
-@section('content')
+    <title>Edynos | Reset password</title>
+
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+    <link href="assets/landing/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/landing/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="assets/landing/css/animate.css" rel="stylesheet">
+    <link href="assets/landing/css/style.css" rel="stylesheet">
+
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
+</head>
+
+<body class="gray-bg">
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -14,7 +38,7 @@
                         </div>
                     @endif
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -44,4 +68,3 @@
         </div>
     </div>
 </div>
-@endsection

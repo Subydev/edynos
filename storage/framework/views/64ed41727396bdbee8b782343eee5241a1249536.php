@@ -1,69 +1,80 @@
-<?php $__env->startSection('content'); ?>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="<?php echo e(url('/login')); ?>">
-                        <?php echo e(csrf_field()); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
 
-                        <div class="form-group<?php echo e($errors->has('username') ? ' has-error' : ''); ?>">
-                            <label for="username" class="col-md-4 control-label">Username</label>
+    <title>Edynos | Login</title>
 
-                            <div class="col-md-6">
-                                <input id="username" type="text" class="form-control" name="username" value="<?php echo e(old('username')); ?>" required autofocus>
+    <link href="assets/landing/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/landing/font-awesome/css/font-awesome.css" rel="stylesheet">
 
-                                <?php if($errors->has('username')): ?>
-                                    <span class="help-block">
-                                        <strong><?php echo e($errors->first('username')); ?></strong>
-                                    </span>
-                                <?php endif; ?>
-                            </div>
-                        </div>
+    <link href="assets/landing/css/animate.css" rel="stylesheet">
+    <link href="assets/landing/css/style.css" rel="stylesheet">
 
-                        <div class="form-group<?php echo e($errors->has('password') ? ' has-error' : ''); ?>">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+    <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>;
+    </script>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+</head>
 
-                                <?php if($errors->has('password')): ?>
-                                    <span class="help-block">
-                                        <strong><?php echo e($errors->first('password')); ?></strong>
-                                    </span>
-                                <?php endif; ?>
-                            </div>
-                        </div>
+<body class="gray-bg">
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
 
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
+                <h1 class="logo-name">El</h1>
 
-                                <a class="btn btn-link" href="<?php echo e(url('/password/reset')); ?>">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
+            <h3>Welcome to Edynos</h3>
+            <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+                <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
+            </p>
+            <p>Login in and check it out.</p>
+            <form class="m-t" role="form" method="POST" action="<?php echo e(route('login')); ?>">
+              <?php echo e(csrf_field()); ?>
+
+
+                <div class="form-group">
+                    <input id="username" type="username" class="form-control" name="username" value="<?php echo e(old('username')); ?>" required autofocus>
+
+                    <?php if($errors->has('username')): ?>
+                        <span class="help-block">
+                            <strong><?php echo e($errors->first('username')); ?></strong>
+                        </span>
+                    <?php endif; ?>
+                </div>
+                <div class="form-group<?php echo e($errors->has('password') ? ' has-error' : ''); ?>">
+                    <input id="password" type="password" class="form-control" name="password" required>
+
+                    <?php if($errors->has('password')): ?>
+                        <span class="help-block">
+                            <strong><?php echo e($errors->first('password')); ?></strong>
+                        </span>
+                    <?php endif; ?>
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+
+                <a href="<?php echo e(route('password.request')); ?>"><small>Forgot password?</small></a>
+                <p class="text-muted text-center"><small>Don't have an account?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="<?php echo e(route('register')); ?>">Create an account</a>
+            </form>
+            <p class="m-t"> <small>Edynos, proudly build on laravel framework &copy; 2017</small> </p>
         </div>
     </div>
-</div>
-<?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!-- Mainly scripts -->
+    <script src="assets/landing/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/landing/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
