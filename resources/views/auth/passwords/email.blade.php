@@ -1,70 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('auth.passwords.layout')
 
-    <title>Edynos | Reset password</title>
+@section('content')
+  <body class="gray-bg">
 
+      <div class="passwordBox animated fadeInDown">
+          <div class="row">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+              <div class="col-md-12">
+                  <div class="ibox-content">
 
+                      <h2 class="font-bold">Forgot password</h2>
 
-    <link href="assets/landing/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/landing/font-awesome/css/font-awesome.css" rel="stylesheet">
+                      @if (session('status'))
+                          <div class="alert alert-success">
+                              {{ session('status') }}
+                          </div>
+                      @endif
 
-    <link href="assets/landing/css/animate.css" rel="stylesheet">
-    <link href="assets/landing/css/style.css" rel="stylesheet">
+                      <p>
+                          Enter your email address and your password will be reset and emailed to you.
+                      </p>
 
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
-</head>
+                      <div class="row">
 
-<body class="gray-bg">
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                          <div class="col-lg-12">
+                              <form class="m-t" role="form" method="POST" action="{{ route('password.email') }}">
+                                {{ csrf_field() }}
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
-                        {{ csrf_field() }}
+                                  <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                      <input id="email" placeholder="Email Address" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                      @if ($errors->has('email'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                          </span>
+                                      @endif
+                                  </div>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                  <button type="submit" class="btn btn-primary block full-width m-b">Send new password</button>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <hr/>
+          <div class="row">
+              <div class="col-md-6">
+                  Edynos
+              </div>
+              <div class="col-md-6 text-right">
+                 <small>© 2017</small>
+              </div>
+          </div>
+      </div>
+@endsection

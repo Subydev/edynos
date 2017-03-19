@@ -6,7 +6,7 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold"><?php echo e(Auth::user()->username); ?></strong>
+                                
                             </span> <span class="text-muted text-xs block">Edit Profile <b class="caret"></b></span>
                         </span>
                     </a>

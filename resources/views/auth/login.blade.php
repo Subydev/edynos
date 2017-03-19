@@ -35,15 +35,15 @@
 
             </div>
             <h3>Welcome to Edynos</h3>
-            <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+            <p>For tuners, by tuners.
                 <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
             </p>
-            <p>Login in and check it out.</p>
+            <p></p>
             <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
               {{ csrf_field() }}
 
                 <div class="form-group">
-                    <input id="username" type="username" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
+                    <input id="username" placeholder="Username" type="username" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
 
                     @if ($errors->has('username'))
                         <span class="help-block">
@@ -52,7 +52,7 @@
                     @endif
                 </div>
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input id="password" type="password" class="form-control" name="password" required>
+                    <input id="password" placeholder="Password" type="password" class="form-control" name="password" required>
 
                     @if ($errors->has('password'))
                         <span class="help-block">
