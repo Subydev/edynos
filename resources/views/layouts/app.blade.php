@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edynos - @yield('title') </title>
 
+    {{-- <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.min.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('assets/font-awesome/css/font-awesome.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('assets/css/animate.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('assets/css/style.css') !!}" /> --}}
 
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
 
 </head>
-<body>
-
+<body class="md-skin fixed-nav no-skin-config">
   <!-- Wrapper-->
     <div id="wrapper">
 
@@ -36,6 +39,7 @@
     </div>
     <!-- End wrapper-->
 
+<!-- Mainly scripts -->
 <script src="{!! asset('js/app.js') !!}" type="text/javascript"></script>
 
 @section('scripts')

@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edynos - <?php echo $__env->yieldContent('title'); ?> </title>
 
+    
 
     <link rel="stylesheet" href="<?php echo asset('css/vendor.css'); ?>" />
     <link rel="stylesheet" href="<?php echo asset('css/app.css'); ?>" />
 
 </head>
-<body>
-
+<body class="md-skin fixed-nav no-skin-config">
   <!-- Wrapper-->
     <div id="wrapper">
 
@@ -36,6 +36,7 @@
     </div>
     <!-- End wrapper-->
 
+<!-- Mainly scripts -->
 <script src="<?php echo asset('js/app.js'); ?>" type="text/javascript"></script>
 
 <?php $__env->startSection('scripts'); ?>
