@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-  /**
+    /**
    * Create a new controller instance.
    *
    * @return void
@@ -26,8 +26,33 @@ class HomeController extends Controller
        return view('home/index');
    }
 
-   public function minor()
-   {
-       return view('home/minor');
-   }
+    public function upload()
+    {
+        return view('upload/index');
+    }
+
+    public function activity()
+    {
+        return view('activity/index');
+    }
+
+    public function table()
+    {
+        return view('table/index');
+    }
+
+    public function forum()
+    {
+        return view('forum/index');
+    }
+
+    public function faq()
+    {
+        return view('faq/index');
+    }
+
+    public function profile()
+    {
+        return view('profile/index');
+    }
 }

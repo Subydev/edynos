@@ -12,8 +12,10 @@ const elixir = require('laravel-elixir');
  */
 elixir(mix => {
     mix.sass('app.scss');
-    mix.copy('resources/assets/vendor/bootstrap/fonts', 'public/fonts');
-    mix.copy('resources/assets/vendor/font-awesome/fonts', 'public/fonts')
+    mix.copy('resources/assets/vendor/bootstrap/fonts', 'public/fonts'),
+        mix.copy('resources/assets/vendor/font-awesome/fonts', 'public/fonts'),
+        mix.copy('resources/assets/landing', 'public/assets/landing'),
+        mix.copy('resources/assets/mail', 'public/assets/mail');
     mix.styles([
         'resources/assets/vendor/bootstrap/css/bootstrap.css',
         'resources/assets/vendor/animate/animate.css',

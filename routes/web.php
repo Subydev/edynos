@@ -18,4 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name("home");
-Route::get('/minor', 'HomeController@minor')->name("minor");
+Route::get('/upload', 'HomeController@upload')->name("upload");
+Route::get('/activity', 'HomeController@activity')->name("activity");
+Route::get('/table', 'HomeController@table')->name("table");
+Route::get('/forum', 'HomeController@forum')->name("forum");
+Route::get('/faq', 'HomeController@faq')->name("faq");
+Route::get('/profile', 'HomeController@profile')->name("profile");

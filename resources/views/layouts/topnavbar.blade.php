@@ -10,27 +10,48 @@
       </div>
         <ul class="nav navbar-top-links navbar-right">
           <li>
-              <span class="m-r-sm text-muted welcome-message">Welcome to the Edynos dashboard.</span>
+              <span class="m-r-sm text-muted welcome-message">Welcome to the Edynos dashboard!</span>
           </li>
           <li class="dropdown">
               <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                  <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                  <i class="fa fa-bell"></i>  <span class="label label-primary">1</span>
               </a>
-              <ul class="dropdown-menu dropdown-messages">
+              <ul class="dropdown-menu dropdown-alerts">
                   <li>
-                      <div class="dropdown-messages-box">
-                          <a href="profile.html" class="pull-left">
-                              <img alt="image" class="img-circle" src="img/a7.jpg">
-                          </a>
-                          <div class="media-body">
-                              <small class="pull-right">46h ago</small>
-                              <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
-                              <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                      <a href="mailbox.html">
+                          <div>
+                              <i class="fa fa-envelope fa-fw"></i> You have 1 message.
+                              <span class="pull-right text-muted small">4 minutes ago</span>
                           </div>
+                      </a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                      <div class="text-center link-block">
+                          <a href="notifications.html">
+                              <strong>See All Alerts</strong>
+                              <i class="fa fa-angle-right"></i>
+                          </a>
                       </div>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="{{ url('/logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+
+            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+         </li>
+      </ul>
+  </nav>
+</div>
           <!-- Authentication Links -->
-          @if (Auth::guest())
+          {{-- @if (Auth::guest())
               <li><a href="{{ url('/login') }}">Login</a></li>
               <li><a href="{{ url('/register') }}">Register</a></li>
           @else
@@ -56,4 +77,4 @@
           @endif
         </ul>
     </nav>
-</div>
+</div> --}}
